@@ -1,3 +1,8 @@
+<h4 align="center">
+  <a href="README.md">🇹🇷 Türkçe</a> |
+  <a href="README_EN.md">🇬🇧 English</a>
+</h4>
+
 # Victus16 Hall Sensör Arızası ve Çözümü
 
 **Kullanım:** Atıfta bulunulduğu sürece alıntı yapılabilir; ticari kullanılamaz, sensör fiyatının 100 katı onarım ücreti isteyenlerden uzak durun! Olası herhangi sorunuz veya görüşünüz varsa gungozb@gmail.com mail adresimden ulaşabilirsiniz, onarım istekleri için mail atmayın!
