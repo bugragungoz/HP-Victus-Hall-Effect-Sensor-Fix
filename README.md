@@ -145,7 +145,7 @@ Hall sensör kartı (Hall sensör tarafı) A1126 ile değişmiş halini göstere
 
 Görüldüğü üzere sensöre yakın iki adet kapasitör mevcut, kılıfları çok küçük olduğu için yanlışlıkla yerinden çıkması halinde tekrar lehimlemesi zor olacaktır. Ayrıca sıcak hava kullanılacak ise JIR2 soket ısıdan eriyebilir veya bozulabilir. Bu sebeple işlem öncesi sensörün etrafı ve hasar görmesi muhtemel soket üzerini kapton bantla kapatılmalıdır. Hatta yeni sensörün sıcaktan daha az etkilenmesi ve fiziksel mukavemet olması açısından değişim sonrasında sensörün üzerine birkaç kat kapton bant uygulanabilir, fazla uygulanırsa sensör kartına baskı oluşacaktır o yüzden bir iki kat yeter. Sensör kartı üzerindeki işlem bu kadar.
 
-Bahsedilen sigorta üzerinde işlem yapabilmek için sensör kartı yerine takılmalı, anakart tekrardan yerine montajlanmalı ve ardından bakır soğutma boruları sökülmelidir. Bakır borular sökmeden de sensör görülebiliyor ve gerekli omaj, süreklilik, voltaj ölçümleri yapılabilir fakat üzerinde işlem yapmak için soğutucuların sökülmesi şart. Soğutucu vidaları söküldükten sonra dikkatle 90 derece kaldırılmalı ve termal putty kurumadıysa asla ellenmemelidir (kurumuş ise değişmesi gerekmekte). Soğutma bloğu yerinden kaldırıldığı için ise termal macun yenilenmesi şart olmakta.
+Bahsedilen sigorta üzerinde işlem yapabilmek için sensör kartı yerine takılmalı, anakart tekrardan yerine montajlanmalı ve ardından bakır soğutma boruları sökülmelidir. Bakır borular sökmeden de sensör görülebiliyor ve gerekli omaj, süreklilik, voltaj ölçümleri yapılabilir fakat üzerinde işlem yapmak için soğutucuların sökülmesi şart. Soğutucu vidaları söküldükten sonra dikkatle 90 derece kaldırılmalı ve termal putty kurumadıysa asla ellenmemelidir (kurumuş ise değişmesi gerekmekte). Soğutma bloğu yerinden kaldırıldığı için ise termal macun yenilenmesi şart olmakta, bakır borular yerine montajlanırken vidalar tork sırasına göre sıkılmalı. 
 
 Sigorta; hall ve IR sensörün bulunduğu kartın anakarta bağlandığı JIR1 isimli soketin hemen yanında FU6 isminde bulunuyor.
 
@@ -186,39 +186,36 @@ FU6 sigortanın lehim köprüsüyle bypass edilmiş halini gösteren görsel:
 
 Bu kontrol kartta enerji yokken sigortanın sokete yakın pini ile soketin pinleri denenerek hangi pinde 3V3 görülmesi gerektiği belirlenerek de yapılmalı. Tüm lehim işlemlerinden sonra süreklilik testi ile lehimlerin sağlamlığı da mutlaka kontrol edilmeli.
 
-### Değişim ve Lehimleme Adımları
-Orijinal sensör ile yeni sensörün pinleri birebir uyumludur yani eskisi çıkarılıp yenisi doğrudan takılabilir, her iki sensör de SOT-23 kılıfındadır. 
-
-* Toshiba sensör sıcak hava tabancası veya kalem havya ile yerinden çıkarılıp, Allegro sensör doğrudan takılabilir.
-* Sensöre yakın iki adet kapasitör mevcut, kılıfları çok küçük olduğu için yanlışlıkla yerinden çıkması halinde tekrar lehimlemesi zor olacaktır.
-* Sıcak hava kullanılacak ise JIR2 soket ısıdan eriyebilir veya bozulabilir. Bu sebeple işlem öncesi sensörün etrafı ve hasar görmesi muhtemel soket üzerini kapton bantla kapatılmalıdır.
-* Sigorta; hall ve IR sensörün bulunduğu kartın anakarta bağlandığı JIR1 isimli soketin hemen yanında **FU6** isminde bulunuyor. 
-* Parçayı yerinden söktükten sonra, lehim köprüsü ile FU6 sigortasını bypass ettim ve multimetre ile kontrol ettiğimde 3.3V hattının sorunsuz olarak soket üzerindeki pine ulaştığını gördüm.
-
 ---
 
 ## 4. Kaynakça
 
-1. **Reddit:** https://www.reddit.com/r/HPVictus/comments/1pzcl91/victus_16_hall_effect_sensor_megathread_laptop/?solution=3f3e10398e7623863f3e10398e762386&js_challenge=1&token=bbbe4bf1c9a2b5160829c4be34da58612efd3615a145ca5a7c9f0026c8098d69&jsc_orig_r=
+1. **Reddit:**
+https://www.reddit.com/r/HPVictus/comments/1pzcl91/victus_16_hall_effect_sensor_megathread_laptop/?solution=3f3e10398e7623863f3e10398e762386&js_challenge=1&token=bbbe4bf1c9a2b5160829c4be34da58612efd3615a145ca5a7c9f0026c8098d69&jsc_orig_r=
 
 RaguTom (https://www.reddit.com/user/RaguTom/)
 
-2. **BADCAPS:** https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3822460-hp-victus-16-hall-effect-sensor-problem
+2. **BADCAPS:**
+https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3822460-hp-victus-16-hall-effect-sensor-problem
 
 mitchw (https://www.badcaps.net/member/199143-mitchw)
 
 
-3. **Maintenance and Service Guide Victus by HP 16.1 inch:** https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf
+3. **Maintenance and Service Guide Victus by HP 16.1 inch:**
+https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf
 
-4. **Toshiba TCS40DLR:** https://toshiba.semicon-storage.com/info/TCS40DLR_datasheet_en_20150403.pdf?did=30105&prodName=TCS40DLR
+4. **Toshiba TCS40DLR:**
+https://toshiba.semicon-storage.com/info/TCS40DLR_datasheet_en_20150403.pdf?did=30105&prodName=TCS40DLR
 
-5. **Allegro A1126:** https://www.ozdisan.com/api/pdf/product/assets/A1126-Allegro.pdf
+5. **Allegro A1126:**
+https://www.ozdisan.com/api/pdf/product/assets/A1126-Allegro.pdf
 
 ---
 
 ## 5. Ek görseller
 
-**Drive:** https://drive.google.com/drive/folders/1yIsKV0Ez4vL3xuzYP01oauqGa7uJhQD5?usp=sharing
+**Drive:** 
+https://drive.google.com/drive/folders/1yIsKV0Ez4vL3xuzYP01oauqGa7uJhQD5?usp=sharing
 
 
 
