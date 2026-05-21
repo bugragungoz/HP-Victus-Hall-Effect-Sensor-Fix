@@ -186,39 +186,37 @@ Image showing the FU6 fuse bypassed with a solder bridge:
 
 This verification should also be performed while the board is de-energized by testing the continuity between the fuse pad closest to the socket and the pins of the socket to determine exactly which pin should carry the 3V3 voltage. Following all soldering operations, the structural integrity of the solder joints must be thoroughly verified with a continuity test.
 
-### Replacement and Soldering Steps
-The pins of the original sensor and the new sensor are identical in layout, meaning the old one can be extracted and the new one can be directly mounted; both sensors share the SOT-23 package format. 
-
-* The Toshiba sensor can be removed using a hot air gun or a standard soldering iron, and the Allegro sensor can be directly soldered in.
-* There are two capacitors situated very close to the sensor; since their packages are microscopic, it will be highly difficult to resolder them if they are accidentally blown away or dislodged.
-* If a hot air station is used, the plastic JIR2 socket may melt or deform from the heat. Therefore, prior to the procedure, the area surrounding the sensor and the vulnerable socket should be heavily shielded with kapton tape.
-* The fuse is located under the designation **FU6** directly adjacent to the socket named JIR1, which connects the daughterboard (housing the hall and IR sensor) to the mainboard. 
-* After removing the faulty component, I bypassed the FU6 fuse pads with a solder bridge and confirmed with a multimeter that the 3.3V line reached the designated pin on the socket without any voltage drop.
 
 ---
 
 ## 4. References
 
-1. **Reddit:** https://www.reddit.com/r/HPVictus/comments/1pzcl91/victus_16_hall_effect_sensor_megathread_laptop/?solution=3f3e10398e7623863f3e10398e762386&js_challenge=1&token=bbbe4bf1c9a2b5160829c4be34da58612efd3615a145ca5a7c9f0026c8098d69&jsc_orig_r=
+1. **Reddit:**
+https://www.reddit.com/r/HPVictus/comments/1pzcl91/victus_16_hall_effect_sensor_megathread_laptop/?solution=3f3e10398e7623863f3e10398e762386&js_challenge=1&token=bbbe4bf1c9a2b5160829c4be34da58612efd3615a145ca5a7c9f0026c8098d69&jsc_orig_r=
 
 RaguTom (https://www.reddit.com/user/RaguTom/)
 
-2. **BADCAPS:** https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3822460-hp-victus-16-hall-effect-sensor-problem
+2. **BADCAPS:**
+https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3822460-hp-victus-16-hall-effect-sensor-problem
 
 mitchw (https://www.badcaps.net/member/199143-mitchw)
 
 
-3. **Maintenance and Service Guide Victus by HP 16.1 inch:** https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf
+3. **Maintenance and Service Guide Victus by HP 16.1 inch:**
+https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf
 
-4. **Toshiba TCS40DLR:** https://toshiba.semicon-storage.com/info/TCS40DLR_datasheet_en_20150403.pdf?did=30105&prodName=TCS40DLR
+4. **Toshiba TCS40DLR:**
+https://toshiba.semicon-storage.com/info/TCS40DLR_datasheet_en_20150403.pdf?did=30105&prodName=TCS40DLR
 
-5. **Allegro A1126:** https://www.ozdisan.com/api/pdf/product/assets/A1126-Allegro.pdf
+5. **Allegro A1126:**
+https://www.ozdisan.com/api/pdf/product/assets/A1126-Allegro.pdf
 
 ---
 
 ## 5. Additional Images
 
-**Drive:** https://drive.google.com/drive/folders/1yIsKV0Ez4vL3xuzYP01oauqGa7uJhQD5?usp=sharing
+**Drive:** 
+https://drive.google.com/drive/folders/1yIsKV0Ez4vL3xuzYP01oauqGa7uJhQD5?usp=sharing
 
 
 
