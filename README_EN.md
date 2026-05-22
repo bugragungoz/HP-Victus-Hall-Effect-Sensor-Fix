@@ -1,3 +1,8 @@
+<div align="center">
+  <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
+  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
+</div>
+
 **Usage:** Can be quoted as long as credited; cannot be used commercially. If you have any questions or opinions, you can reach me at my email address gungozb@gmail.com.
 
 **WARNING:** *The hardware modifications in this documentation require SMD-level soldering skills, schematic reading competence, and electrical measurement knowledge. The responsibility for any possible hardware damage, data loss, or personal injury that may occur during the application of the information presented here belongs entirely to the individual. Any physical intervention will void your device's manufacturer warranty. The device must absolutely be de-energized and the battery socket must be unplugged while performing all operations. Since the SMD component packages are small and the working area on the board is narrow, extreme caution must be exercised to avoid damaging other components.*
