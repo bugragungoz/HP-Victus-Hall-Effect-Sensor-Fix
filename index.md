@@ -21,4 +21,4 @@ Technical documentation for diagnosing and repairing hall effect sensor issues i
 ## Documentation
 
 - English Guide → [Open]( /en-guide/ )
-- Türkçe Rehber → [Open]( /tr-guide/ )
+- Türkçe Rehber → [Aç]( /tr-guide/ )
