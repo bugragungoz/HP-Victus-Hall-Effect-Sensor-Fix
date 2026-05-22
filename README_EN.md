@@ -1,43 +1,18 @@
 <style>
-  body { 
-    background-color: #0d1117 !important; 
-    color: #c9d1d9 !important; 
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    line-height: 1.6;
-  }
+  body { background-color: #0d1117 !important; color: #c9d1d9 !important; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height: 1.6; }
   h1, h2, h3, h4 { color: #58a6ff !important; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; }
   a { color: #58a6ff !important; text-decoration: none; font-weight: bold; }
   a:hover { text-decoration: underline; }
-  code { background-color: rgba(110,118,129,0.2) !important; color: #ff7b72 !important; padding: 0.2em 0.4em; border-radius: 6px; font-size: 85%; }
-  img { 
-    max-width: 100% !important; 
-    max-height: 450px !important; 
-    height: auto !important;
-    object-fit: contain !important;
-    display: block; 
-    margin: 20px auto; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    border: 1px solid #30363d;
-  }
-  .header-table { width: 100%; border: none !important; margin-bottom: 20px; }
-  .header-table td { border: none !important; padding: 0 !important; }
+  img { max-width: 100% !important; max-height: 450px !important; height: auto !important; object-fit: contain !important; display: block; margin: 20px auto; border-radius: 8px; border: 1px solid #30363d; }
 </style>
 
 <h4 align="center">
   <a href="README.md">Türkçe</a> | <a href="README_EN.md">English</a>
 </h4>
 
-<table class="header-table">
-  <tr>
-    <td></td>
-    <td align="right"><i>Date: May 2026<br>Revision: V1.0</i></td>
-  </tr>
-</table>
-
 <div align="center">
   <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
-  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
+  <p><b>Author: Buğra Güngöz</b><br><i>EEE</i></p>
 </div>
 
 ---
