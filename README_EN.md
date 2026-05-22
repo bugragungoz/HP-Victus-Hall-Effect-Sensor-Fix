@@ -12,7 +12,7 @@
 
 <div align="center">
   <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
-  <p><b>Author: Buğra Güngöz</b><br><i>EEE</i></p>
+  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
 </div>
 
 ---
