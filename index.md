@@ -1,13 +1,23 @@
 ---
 layout: default
-title: Home
+title: HP Victus 16 Hall Effect Sensor Fix
 ---
 
-# HP Victus Documentation
+<div class="topbar">
+  <a href="{{ '/tr' | relative_url }}">TR</a>
+</div>
 
-Buğra Güngöz
+# HP Victus 16 Hall Effect Sensor Fix
 
-## Rehberler
+Technical documentation for diagnosing and repairing hall effect sensor issues in HP Victus 16 laptops.
 
-[Türkçe Rehber](README.md)
-[English Guide](README_EN.md)
+## Contents
+- Fault identification 
+- Fault detection 
+- Solution
+- Source
+- Additional images
+
+## Documentation
+- Full Guide → README_EN.md
+- Türkçe → README.md
