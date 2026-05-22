@@ -1,22 +1,3 @@
-<style>
-  body { background-color: #0d1117 !important; color: #c9d1d9 !important; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height: 1.6; }
-  h1, h2, h3, h4 { color: #58a6ff !important; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; }
-  a { color: #58a6ff !important; text-decoration: none; font-weight: bold; }
-  a:hover { text-decoration: underline; }
-  img { max-width: 100% !important; max-height: 450px !important; height: auto !important; object-fit: contain !important; display: block; margin: 20px auto; border-radius: 8px; border: 1px solid #30363d; }
-</style>
-
-<h4 align="center">
-  <a href="README.md">Türkçe</a> | <a href="README_EN.md">English</a>
-</h4>
-
-<div align="center">
-  <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
-  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
-</div>
-
----
-
 **Usage:** Can be quoted as long as credited; cannot be used commercially. If you have any questions or opinions, you can reach me at my email address gungozb@gmail.com.
 
 **WARNING:** *The hardware modifications in this documentation require SMD-level soldering skills, schematic reading competence, and electrical measurement knowledge. The responsibility for any possible hardware damage, data loss, or personal injury that may occur during the application of the information presented here belongs entirely to the individual. Any physical intervention will void your device's manufacturer warranty. The device must absolutely be de-energized and the battery socket must be unplugged while performing all operations. Since the SMD component packages are small and the working area on the board is narrow, extreme caution must be exercised to avoid damaging other components.*
