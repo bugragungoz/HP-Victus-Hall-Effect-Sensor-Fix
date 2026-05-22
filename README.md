@@ -1,3 +1,8 @@
+---
+layout: default
+title: Türkçe Rehber
+permalink: /tr-guide/
+---
 <div align="center">
   <h1>HP Victus 16 Hall Effect Sensör Arızası ve Çözümü</h1>
   <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
