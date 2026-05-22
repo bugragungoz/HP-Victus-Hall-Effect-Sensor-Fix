@@ -5,7 +5,9 @@ title: Home
 
 # HP Victus Documentation
 
-Bugra
+Buğra Güngöz
 
-- 🇹🇷 [Türkçe Rehber](README.md)
-- 🇬🇧 [English Guide](README_EN.md)
+## Rehberler
+
+[Türkçe Rehber](README.md)
+[English Guide](README_EN.md)
