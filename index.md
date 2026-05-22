@@ -15,7 +15,7 @@ Technical documentation for diagnosing and repairing hall effect sensor issues i
 - Fault identification 
 - Fault detection 
 - Solution
-- Source
+- References
 - Additional images
 
 ## Documentation
