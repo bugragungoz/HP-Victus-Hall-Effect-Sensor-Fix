@@ -19,5 +19,6 @@ HP Victus 16 laptoplarda hall effect sensör arızasının teşhis ve çözümü
 - Ek görseller
 
 ## Dokümantasyon
-- Tam rehber → README.md
-- English → README_EN.md
+
+- Türkçe Rehber → [Aç]( /tr-guide/ )
+- English Guide → [Open]( /en-guide/ )
