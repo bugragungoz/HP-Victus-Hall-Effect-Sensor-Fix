@@ -1,3 +1,8 @@
+<div align="center">
+  <h1>HP Victus 16 Hall Effect Sensör Arızası ve Çözümü</h1>
+  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
+</div>
+
 **Kullanım:** Atıfta bulunulduğu sürece alıntı yapılabilir; ticari kullanılamaz, sensör fiyatının 100 katı onarım ücreti isteyenlerden uzak durun! Olası herhangi sorunuz veya görüşünüz varsa gungozb@gmail.com mail adresimden ulaşabilirsiniz, onarım istekleri için mail atmayın!
 
 **UYARI:** *Bu dokümantasyonda yer alan donanım modifikasyonları için SMD seviyesinde lehimleme becerisi, şematik okuma yetkinliği ve elektriksel ölçüm bilgisi gerekmektedir. Burada sunulan bilgilerin uygulanması esnasında oluşabilecek olası donanım hasarları, veri kayıpları veya kişisel yaralanmaların sorumluluğu tamamen kişinin kendine aittir. Yapılacak her türlü fiziksel müdahale, cihazınızın üretici garantisini sonlandıracaktır. Tüm işlemler yapılırken mutlaka cihaz enerjisiz hale getirilmelidir, batarya soketi sökülmelidir, SMD eleman kılıfları küçük olduğundan ve kart üzerinde çalışılacak alan dar olduğundan diğer bileşenlere zarar vermemek adına çok dikkatli olunmalıdır.*
