@@ -1,0 +1,11 @@
+title: HP Victus Hall Effect Sensor Fix
+description: Hall Effect sensor repair documentation for HP Victus laptops
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+sass:
+  sass_dir: _sass
