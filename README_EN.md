@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 <div align="center">
   <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
   <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
