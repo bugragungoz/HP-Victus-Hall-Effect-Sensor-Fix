@@ -1,21 +1,3 @@
-<h4 align="center">
-  <a href="README.md">Türkçe</a> | <a href="README_EN.md">English</a>
-</h4>
-
-<div align="center">
-  <h1>HP Victus 16 Hall Effect Sensör Arızası ve Çözümü</h1>
-  <p><b>Buğra Güngöz</b><br><i>EEE</i></p>
-</div>
-
----
-<style>
-  body { background-color: #0d1117 !important; color: #c9d1d9 !important; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height: 1.6; }
-  h1, h2, h3, h4 { color: #58a6ff !important; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; }
-  a { color: #58a6ff !important; text-decoration: none; font-weight: bold; }
-  a:hover { text-decoration: underline; }
-  img { max-width: 100% !important; max-height: 450px !important; height: auto !important; object-fit: contain !important; display: block; margin: 20px auto; border-radius: 8px; border: 1px solid #30363d; }
-</style>
-
 **Kullanım:** Atıfta bulunulduğu sürece alıntı yapılabilir; ticari kullanılamaz, sensör fiyatının 100 katı onarım ücreti isteyenlerden uzak durun! Olası herhangi sorunuz veya görüşünüz varsa gungozb@gmail.com mail adresimden ulaşabilirsiniz, onarım istekleri için mail atmayın!
 
 **UYARI:** *Bu dokümantasyonda yer alan donanım modifikasyonları için SMD seviyesinde lehimleme becerisi, şematik okuma yetkinliği ve elektriksel ölçüm bilgisi gerekmektedir. Burada sunulan bilgilerin uygulanması esnasında oluşabilecek olası donanım hasarları, veri kayıpları veya kişisel yaralanmaların sorumluluğu tamamen kişinin kendine aittir. Yapılacak her türlü fiziksel müdahale, cihazınızın üretici garantisini sonlandıracaktır. Tüm işlemler yapılırken mutlaka cihaz enerjisiz hale getirilmelidir, batarya soketi sökülmelidir, SMD eleman kılıfları küçük olduğundan ve kart üzerinde çalışılacak alan dar olduğundan diğer bileşenlere zarar vermemek adına çok dikkatli olunmalıdır.*
