@@ -1,9 +1,0 @@
-title: HP Victus Hall Effect Sensor Fix
-description: Hall Effect Sensor repair documentation for HP Victus laptops
-theme: minima
-
-markdown: kramdown
-highlighter: rouge
-
-plugins:
-  - jekyll-feed
