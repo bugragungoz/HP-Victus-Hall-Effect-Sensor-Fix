@@ -1,0 +1,8 @@
+{%- assign t = site.data.i18n[page.lang] | default: site.data.i18n.en -%}
+<details class="aside-note">
+  <summary>{{ t.variant.title }}</summary>
+  <p>{{ t.variant.p1 }}</p>
+  <p>{{ t.variant.p2 }}</p>
+  <ul>{% for it in t.variant.items %}<li>{{ it }}</li>{% endfor %}</ul>
+  <p class="aside-note__caution">{{ t.variant.p3 }}</p>
+</details>

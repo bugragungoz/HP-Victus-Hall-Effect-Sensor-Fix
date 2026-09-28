@@ -1,15 +1,21 @@
 ---
 layout: default
 title: HP Victus 16 Hall Effect Sensor Fix (TR)
+lang: tr
+description: HP Victus 16 laptoplarda hall effect sensör ve FU6 sigorta arızasının teşhis ve çözümüne dair teknik dokümantasyon.
 ---
-
-<div class="topbar">
-  <a href="{{ '/' | relative_url }}">EN</a>
-</div>
 
 # HP Victus 16 Hall Effect Sensör Arızası ve Çözümü
 
 HP Victus 16 laptoplarda hall effect sensör arızasının teşhis ve çözümüne dair teknik dokümantasyon.
+
+- [Türkçe rehberi oku]({{ '/tr-guide/' | relative_url }})
+- [English guide]({{ '/en-guide/' | relative_url }})
+- [Deutsche Anleitung]({{ '/de-guide/' | relative_url }})
+- [Guide en français]({{ '/fr-guide/' | relative_url }})
+- [Guía en español]({{ '/es-guide/' | relative_url }})
+- [Panduan Bahasa Indonesia]({{ '/id-guide/' | relative_url }})
+{: .doc-links}
 
 ## İçerik
 - Arızanın tanımlanması
@@ -17,8 +23,3 @@ HP Victus 16 laptoplarda hall effect sensör arızasının teşhis ve çözümü
 - Çözüm
 - Kaynakça
 - Ek görseller
-
-## Dokümantasyon
-
-- 🇬🇧 English → [Open English Guide]({{ '/en-guide/' | relative_url }})
-- 🇹🇷 Türkçe → [Türkçe Rehberi Aç]({{ '/tr-guide/' | relative_url }})

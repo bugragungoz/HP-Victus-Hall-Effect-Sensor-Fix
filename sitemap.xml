@@ -16,4 +16,24 @@
     <priority>0.90</priority>
   </url>
 
+  <url>
+    <loc>https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/de-guide/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/fr-guide/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/es-guide/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/id-guide/</loc>
+    <priority>0.80</priority>
+  </url>
+
 </urlset>

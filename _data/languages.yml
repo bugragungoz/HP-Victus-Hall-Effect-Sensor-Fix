@@ -1,0 +1,31 @@
+# Order = order in language menus. "guide" and "home" are site-relative paths.
+- code: en
+  name: English
+  locale: en_US
+  guide: /en-guide/
+  home: /
+- code: tr
+  name: Türkçe
+  locale: tr_TR
+  guide: /tr-guide/
+  home: /tr
+- code: de
+  name: Deutsch
+  locale: de_DE
+  guide: /de-guide/
+  home: /de-guide/
+- code: fr
+  name: Français
+  locale: fr_FR
+  guide: /fr-guide/
+  home: /fr-guide/
+- code: es
+  name: Español
+  locale: es_ES
+  guide: /es-guide/
+  home: /es-guide/
+- code: id
+  name: Bahasa Indonesia
+  locale: id_ID
+  guide: /id-guide/
+  home: /id-guide/

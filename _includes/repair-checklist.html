@@ -1,0 +1,5 @@
+{%- assign t = site.data.i18n[page.lang] | default: site.data.i18n.en -%}
+<section class="checklist" aria-label="{{ t.checklist.title }}">
+  <p class="box-title">{{ t.checklist.title }}</p>
+  <ol>{% for it in t.checklist.items %}<li>{{ it }}</li>{% endfor %}</ol>
+</section>

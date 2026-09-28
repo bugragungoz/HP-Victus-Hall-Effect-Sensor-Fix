@@ -1,0 +1,378 @@
+en:
+  brand: Victus 16 Hall sensor guide
+  description: Diagnosing and repairing the Hall effect sensor and FU6 fuse failure in HP Victus 16 laptops (Toshiba TCS40DLR LA8 to Allegro A1126).
+  skip: Skip to content
+  contents: Contents
+  language: Language
+  theme: Switch light/dark theme
+  repo: GitHub repository
+  preview: Image preview
+  close: Close
+  figure: Figure
+  anchor: Link to this section
+  zoom: Click to enlarge
+  read_guide: Read the guide
+  other_langs: Other languages
+  summary:
+    title: At a glance
+    symptom_k: Symptom
+    symptom: Screen and keyboard backlight turn off or flicker at random, mostly under high thermal load; the system behaves as if the lid were closed.
+    cause_k: Cause
+    cause: The FU6 fuse on the Hall sensor's 3.3 V supply degrades with heat and its resistance rises; the original Toshiba TCS40DLR (LA8) sensor is also rated only up to 85 °C.
+    fix_k: Fix
+    fix: Replace the sensor with an Allegro A1126 and bypass FU6 (or fit a new fuse). Doing only one of the two is not enough.
+    level_k: Level
+    level: 'Advanced: SMD soldering, schematic reading and multimeter measurements. The motherboard and the heatsink have to be removed.'
+  diagram:
+    title: Supply path of the Hall sensor
+    mb: Motherboard
+    sb: Sensor board
+    rail: 3V3 rail
+    cable: FFC cable
+    sensor: Hall sensor
+    ec: EC
+    out: Output (FFC)
+    light: Screen and keyboard backlight
+    caption: FU6 is in series with the sensor's supply, so any resistance it gains drops voltage before it reaches the sensor. This is a simplified, block-level view; the sensor output may pass through intermediate circuitry on the motherboard before it reaches the EC.
+  variant:
+    title: Can't find FU6 on your board?
+    p1: This guide is based on my own motherboard, where the fuse is labelled FU6 and sits right next to the JIR1 connector. On other board variants (for example Intel based ones) the equivalent fuse is likely to be on the back side of the motherboard, labelled FN2; this comes from forum cases and is not certain. To locate the fuse, follow the Hall sensor's 3.3V line back from the JIR1 connector.
+    p2: 'For a definite diagnosis of whether the fuse is healthy, both of these measurements should be done:'
+    items:
+    - With the board de-energized, the fuse must pass a continuity test between its two ends (the buzzer must sound). If the buzzer stays silent and the multimeter shows a resistance value, the fuse has degraded.
+    - With the board energized, there must be no noticeable voltage drop between the two ends of the fuse; on a healthy fuse this drop is practically zero and does not exceed a few mV. On my faulty FU6 I measured 30mV.
+    p3: 'Be careful when measuring live: a slipping probe tip can short neighbouring pins and damage the hardware. First determine with a continuity test, while the board is de-energized, which pin must carry 3V3.'
+  checklist:
+    title: After the repair
+    items:
+    - Check every solder joint with a continuity test.
+    - With the board powered off, find by continuity which JIR1 pin must carry 3V3; then carefully measure 3.3 V on that pin with the board powered.
+    - Refit the heatsink with fresh thermal paste and tighten the screws in the torque order.
+    - Turn on the keyboard backlight and open and close the lid a few times; screen and backlight should follow the lid correctly.
+    - Run a long thermal stress test and watch for flicker or backlight dropouts.
+  disclaimer:
+    title: 'Before you start: disclaimer'
+    p1: I am not a repair technician; I am an electrical and electronics engineering student. What this guide describes is based on information I compiled from the internet, my reading of the datasheets, my own conclusions, and the work and measurements I personally carried out on my own device; there is no guarantee that it will give the same result on every device.
+    p2: 'All measurements and operations in this guide are entirely at your own responsibility. Pay particular attention to the following:'
+    items:
+    - Before any soldering or disassembly, unplug the charger, make sure the device is de-energized and disconnect the battery connector.
+    - During live measurements a slipping probe tip can short neighbouring pins and damage the hardware; use fine-tip probes and keep them steady on the pads.
+    - When using hot air, protect the small capacitors near the sensor and connectors such as JIR2 with kapton tape.
+    - Take precautions against electrostatic discharge (ESD) while working on the board.
+    - If the heatsink has been removed, renew the thermal paste and tighten the screws in the torque order.
+    - If you are unsure about a step, stop and get help from someone experienced.
+tr:
+  brand: Victus 16 Hall sensör rehberi
+  description: HP Victus 16 laptoplarda hall effect sensör ve FU6 sigorta arızasının teşhisi ve donanımsal çözümü (Toshiba TCS40DLR LA8 yerine Allegro A1126).
+  skip: İçeriğe geç
+  contents: İçindekiler
+  language: Dil
+  theme: Açık/koyu temayı değiştir
+  repo: GitHub deposu
+  preview: Görsel önizleme
+  close: Kapat
+  figure: Şekil
+  anchor: Bu bölümün bağlantısı
+  zoom: Büyütmek için tıklayın
+  read_guide: Rehberi oku
+  other_langs: Diğer diller
+  summary:
+    title: Kısaca
+    symptom_k: Belirti
+    symptom: Ekran ve klavye aydınlatmasının özellikle yüksek termal yük altında rastgele kapanması veya titremesi; sistem kapak kapanmış gibi davranıyor.
+    cause_k: Neden
+    cause: Hall sensörün 3.3V besleme hattındaki FU6 sigortası ısıdan bozularak direnç kazanıyor; orijinal Toshiba TCS40DLR (LA8) sensör de en fazla 85°C için tasarlanmış.
+    fix_k: Çözüm
+    fix: Sensörün Allegro A1126 ile değiştirilmesi ve FU6'nın bypass edilmesi (veya yeni sigorta takılması). Tek başına biri yeterli değil.
+    level_k: Seviye
+    level: 'İleri: SMD lehimleme, şematik okuma ve multimetre ile ölçüm. Anakart ve soğutucu sökülmek zorunda.'
+  diagram:
+    title: Hall sensörün besleme yolu
+    mb: Anakart
+    sb: Sensör kartı
+    rail: 3V3 hattı
+    cable: FFC kablo
+    sensor: Hall sensör
+    ec: EC
+    out: Çıkış (FFC)
+    light: Ekran ve klavye aydınlatması
+    caption: FU6 sensörün beslemesine seri bağlı, dolayısıyla sigortanın kazandığı her direnç gerilimi sensöre ulaşmadan düşürüyor. Blok seviyesinde, sadeleştirilmiş bir gösterimdir; sensör çıkışı EC'ye ulaşmadan önce anakart üzerindeki ara devrelerden geçebilir.
+  variant:
+    title: Kartınızda FU6'yı bulamıyor musunuz?
+    p1: Bu rehber kendi anakartım üzerinden anlatıldı; bende sigorta FU6 ismiyle JIR1 soketinin hemen yanında bulunuyor. Farklı varyant anakartlarda (örneğin Intel işlemcili olanlarda) eşdeğer sigortanın anakartın arka yüzeyinde FN2 ismiyle bulunması muhtemel; bu bilgi forumlardaki vakalardan geliyor ve kesin değil. Sigortayı bulmak için hall sensörün 3.3V hattı JIR1 soketinden geriye doğru takip edilebilir.
+    p2: 'Sigortanın sağlam olup olmadığına dair kesin tanı için iki ölçüm birlikte yapılmalıdır:'
+    items:
+    - Kart enerjisizken sigortanın iki ucu arasında süreklilik testi geçmelidir (buzzer ötmelidir). Buzzer ötmüyor ve multimetre bir direnç değeri gösteriyorsa sigorta bozulmuştur.
+    - Kart enerjiliyken sigortanın iki ucu arasında kayda değer bir gerilim düşümü olmamalıdır; sağlam bir sigortada bu düşüm pratikte sıfıra yakındır ve birkaç mV'u geçmez. Benim bozuk FU6 sigortamda 30mV ölçmüştüm.
+    p3: 'Enerjili ölçüm yapılırken dikkatli olunmalıdır: prob ucunun kayması komşu pinleri kısa devre ederek donanım hasarına yol açabilir. Hangi pinde 3V3 olması gerektiği önce kart enerjisizken süreklilik testi ile belirlenmelidir.'
+  checklist:
+    title: Onarım sonrası kontrol
+    items:
+    - Tüm lehimlerin sağlamlığını süreklilik testi ile kontrol edin.
+    - Kart enerjisizken süreklilik testi ile JIR1 soketinde hangi pinde 3V3 görülmesi gerektiğini belirleyin; ardından kart enerjiliyken dikkatle o pinde 3.3V ölçün.
+    - Soğutucuyu yeni termal macun ile takın, vidaları tork sırasına göre sıkın.
+    - Klavye aydınlatmasını açıp kapağı birkaç kez açıp kapatın; ekran ve aydınlatma kapağa doğru tepki vermeli.
+    - Uzun süreli termal stres testi yapıp titreme veya aydınlatma kesintisi olup olmadığını gözlemleyin.
+  disclaimer:
+    title: 'Okumadan önce: sorumluluk reddi'
+    p1: Ben tamirci değilim, elektrik elektronik mühendisliği öğrencisiyim. Bu rehberde anlatılanlar internetten derlediğim bilgilere, datasheet yorumlarıma, kendi çıkarımlarıma ve kendi cihazımda bizzat yaptığım işlem ve ölçümlere dayanmaktadır; her cihazda aynı sonucu vereceği garanti edilemez.
+    p2: 'Rehberdeki tüm ölçümler ve işlemler tamamen kişinin kendi sorumluluğundadır. Özellikle şunlara dikkat edilmelidir:'
+    items:
+    - Lehim ve söküm işlemlerinden önce adaptör çıkarılmalı, cihaz enerjisiz hale getirilmeli ve batarya soketi sökülmelidir.
+    - Enerjili ölçümlerde prob ucunun kayması komşu pinleri kısa devre ederek donanım hasarına yol açabilir; ince uçlu prob kullanılmalı ve problar pad üzerinde sabit tutulmalıdır.
+    - Sıcak hava kullanılırken sensöre yakın küçük kapasitörler ve JIR2 gibi soketler kapton bant ile korunmalıdır.
+    - Kart üzerinde çalışırken statik elektriğe (ESD) karşı önlem alınmalıdır.
+    - Soğutucu söküldüyse termal macun yenilenmeli, vidalar tork sırasına göre sıkılmalıdır.
+    - Emin olunmayan bir adımda işleme devam edilmemeli, deneyimli birinden destek alınmalıdır.
+de:
+  brand: Victus 16 Hall-Sensor-Anleitung
+  description: Diagnose und Reparatur des Hall-Sensor- und FU6-Sicherungsfehlers bei HP Victus 16 Laptops (Toshiba TCS40DLR LA8 durch Allegro A1126 ersetzt).
+  skip: Zum Inhalt springen
+  contents: Inhalt
+  language: Sprache
+  theme: Helles/dunkles Design umschalten
+  repo: GitHub-Repository
+  preview: Bildvorschau
+  close: Schließen
+  figure: Abbildung
+  anchor: Link zu diesem Abschnitt
+  zoom: Zum Vergrößern klicken
+  read_guide: Anleitung lesen
+  other_langs: Weitere Sprachen
+  summary:
+    title: Auf einen Blick
+    symptom_k: Symptom
+    symptom: Bildschirm- und Tastaturbeleuchtung gehen zufällig aus oder flackern, vor allem unter hoher thermischer Last; das System verhält sich, als wäre der Deckel geschlossen.
+    cause_k: Ursache
+    cause: Die Sicherung FU6 in der 3,3-V-Versorgung des Hall-Sensors altert durch Hitze und ihr Widerstand steigt; der originale Toshiba TCS40DLR (LA8) ist außerdem nur bis 85 °C spezifiziert.
+    fix_k: Lösung
+    fix: Den Sensor durch einen Allegro A1126 ersetzen und FU6 überbrücken (oder eine neue Sicherung einsetzen). Nur eines von beiden reicht nicht aus.
+    level_k: Niveau
+    level: 'Fortgeschritten: SMD-Löten, Schaltplanlesen und Messungen mit dem Multimeter. Hauptplatine und Kühlkörper müssen ausgebaut werden.'
+  diagram:
+    title: Versorgungspfad des Hall-Sensors
+    mb: Hauptplatine
+    sb: Sensorplatine
+    rail: 3V3-Schiene
+    cable: FFC-Kabel
+    sensor: Hall-Sensor
+    ec: EC
+    out: Ausgang (FFC)
+    light: Bildschirm- und Tastaturbeleuchtung
+    caption: FU6 liegt in Reihe mit der Versorgung des Sensors; jeder zusätzliche Widerstand senkt die Spannung, bevor sie den Sensor erreicht. Vereinfachte Darstellung auf Blockebene; der Sensorausgang kann auf der Hauptplatine Zwischenschaltungen durchlaufen, bevor er den EC erreicht.
+  variant:
+    title: FU6 auf Ihrer Platine nicht gefunden?
+    p1: Diese Anleitung basiert auf meiner eigenen Hauptplatine, auf der die Sicherung als FU6 bezeichnet ist und direkt neben der Buchse JIR1 sitzt. Auf anderen Platinenvarianten (zum Beispiel mit Intel-Prozessor) befindet sich die entsprechende Sicherung wahrscheinlich auf der Rückseite der Hauptplatine und trägt die Bezeichnung FN2; das stammt aus Forenfällen und ist nicht sicher. Um die Sicherung zu finden, verfolgt man die 3,3-V-Leitung des Hall-Sensors von der Buchse JIR1 aus zurück.
+    p2: 'Für eine sichere Diagnose, ob die Sicherung intakt ist, sollten beide Messungen durchgeführt werden:'
+    items:
+    - Bei stromloser Platine muss die Sicherung zwischen ihren beiden Enden die Durchgangsprüfung bestehen (der Summer muss ertönen). Bleibt der Summer still und zeigt das Multimeter einen Widerstandswert, ist die Sicherung degradiert.
+    - Bei eingeschalteter Platine darf zwischen den beiden Enden der Sicherung kein nennenswerter Spannungsabfall auftreten; bei einer intakten Sicherung ist er praktisch null und liegt höchstens bei wenigen mV. An meiner defekten FU6 habe ich 30 mV gemessen.
+    p3: 'Bei Messungen unter Spannung vorsichtig sein: Eine abrutschende Messspitze kann benachbarte Pins kurzschließen und die Hardware beschädigen. Zuerst bei stromloser Platine per Durchgangsprüfung ermitteln, welcher Pin 3V3 führen muss.'
+  checklist:
+    title: Nach der Reparatur
+    items:
+    - Alle Lötstellen per Durchgangsprüfung kontrollieren.
+    - Bei stromloser Platine per Durchgangsprüfung ermitteln, welcher Pin von JIR1 3V3 führen muss; danach bei eingeschalteter Platine vorsichtig 3,3 V an diesem Pin messen.
+    - Den Kühlkörper mit neuer Wärmeleitpaste montieren und die Schrauben in der vorgegebenen Reihenfolge anziehen.
+    - Tastaturbeleuchtung einschalten und den Deckel einige Male öffnen und schließen; Bildschirm und Beleuchtung müssen dem Deckel korrekt folgen.
+    - Einen längeren thermischen Belastungstest durchführen und auf Flackern oder Aussetzer der Beleuchtung achten.
+  disclaimer:
+    title: 'Vor dem Start: Haftungsausschluss'
+    p1: Ich bin kein Reparaturtechniker, sondern Student der Elektrotechnik und Elektronik. Der Inhalt dieser Anleitung beruht auf Informationen, die ich im Internet zusammengetragen habe, auf meiner Auslegung der Datenblätter, auf eigenen Schlussfolgerungen sowie auf den Arbeiten und Messungen, die ich selbst an meinem eigenen Gerät durchgeführt habe; es gibt keine Garantie, dass sie bei jedem Gerät zum gleichen Ergebnis führt.
+    p2: 'Alle Messungen und Arbeiten in dieser Anleitung erfolgen vollständig auf eigene Verantwortung. Achten Sie besonders auf Folgendes:'
+    items:
+    - Vor dem Löten oder Zerlegen das Netzteil abziehen, sicherstellen, dass das Gerät stromlos ist, und den Akkustecker lösen.
+    - Bei Messungen unter Spannung kann eine abrutschende Messspitze benachbarte Pins kurzschließen und die Hardware beschädigen; feine Messspitzen verwenden und sie ruhig auf den Pads halten.
+    - Bei Heißluft die kleinen Kondensatoren neben dem Sensor und Buchsen wie JIR2 mit Kapton-Band schützen.
+    - Bei der Arbeit an der Platine Maßnahmen gegen elektrostatische Entladung (ESD) treffen.
+    - Wurde der Kühlkörper abgenommen, die Wärmeleitpaste erneuern und die Schrauben in der vorgegebenen Reihenfolge anziehen.
+    - Bei Unsicherheit in einem Schritt nicht weitermachen und Hilfe von einer erfahrenen Person holen.
+fr:
+  brand: Guide capteur Hall Victus 16
+  description: Diagnostic et réparation de la panne du capteur à effet Hall et du fusible FU6 sur les ordinateurs portables HP Victus 16 (Toshiba TCS40DLR LA8 remplacé par un Allegro A1126).
+  skip: Aller au contenu
+  contents: Sommaire
+  language: Langue
+  theme: Basculer entre thème clair et sombre
+  repo: Dépôt GitHub
+  preview: Aperçu de l'image
+  close: Fermer
+  figure: Figure
+  anchor: Lien vers cette section
+  zoom: Cliquer pour agrandir
+  read_guide: Lire le guide
+  other_langs: Autres langues
+  summary:
+    title: En bref
+    symptom_k: Symptôme
+    symptom: Le rétroéclairage de l'écran et du clavier s'éteint ou scintille au hasard, surtout sous forte charge thermique ; le système se comporte comme si l'écran était rabattu.
+    cause_k: Cause
+    cause: Le fusible FU6 sur l'alimentation 3,3 V du capteur Hall se dégrade avec la chaleur et sa résistance augmente ; le capteur Toshiba TCS40DLR (LA8) d'origine n'est de plus spécifié que jusqu'à 85 °C.
+    fix_k: Solution
+    fix: Remplacer le capteur par un Allegro A1126 et ponter FU6 (ou poser un fusible neuf). Une seule des deux opérations ne suffit pas.
+    level_k: Niveau
+    level: 'Avancé : soudure CMS, lecture de schémas et mesures au multimètre. La carte mère et le dissipateur doivent être démontés.'
+  diagram:
+    title: Chemin d'alimentation du capteur Hall
+    mb: Carte mère
+    sb: Carte capteur
+    rail: Rail 3V3
+    cable: Nappe FFC
+    sensor: Capteur Hall
+    ec: EC
+    out: Sortie (FFC)
+    light: Rétroéclairage écran et clavier
+    caption: FU6 est en série avec l'alimentation du capteur ; toute résistance qu'il gagne fait chuter la tension avant qu'elle n'atteigne le capteur. Il s'agit d'une vue simplifiée au niveau des blocs ; la sortie du capteur peut traverser des circuits intermédiaires sur la carte mère avant d'atteindre l'EC.
+  variant:
+    title: Vous ne trouvez pas FU6 sur votre carte ?
+    p1: Ce guide s'appuie sur ma propre carte mère, où le fusible est repéré FU6 et se trouve juste à côté du connecteur JIR1. Sur d'autres variantes de carte (par exemple celles à processeur Intel), le fusible équivalent se trouve probablement sur la face arrière de la carte mère, repéré FN2 ; cela provient de cas rapportés sur des forums et n'est pas certain. Pour trouver le fusible, suivez la ligne 3,3 V du capteur Hall en remontant depuis le connecteur JIR1.
+    p2: 'Pour un diagnostic certain de l''état du fusible, les deux mesures suivantes doivent être faites :'
+    items:
+    - Carte hors tension, le fusible doit passer le test de continuité entre ses deux extrémités (le buzzer doit sonner). Si le buzzer reste muet et que le multimètre affiche une valeur de résistance, le fusible est dégradé.
+    - Carte sous tension, il ne doit y avoir aucune chute de tension notable entre les deux extrémités du fusible ; sur un fusible sain, elle est pratiquement nulle et ne dépasse pas quelques mV. Sur mon FU6 défectueux, j'ai mesuré 30 mV.
+    p3: 'Soyez prudent lors des mesures sous tension : une pointe de touche qui glisse peut court-circuiter des broches voisines et endommager le matériel. Déterminez d''abord, carte hors tension, par un test de continuité, quelle broche doit porter le 3V3.'
+  checklist:
+    title: Après la réparation
+    items:
+    - Vérifier chaque soudure par un test de continuité.
+    - Carte hors tension, repérer par continuité la broche de JIR1 qui doit porter le 3V3 ; puis, carte sous tension, mesurer prudemment 3,3 V sur cette broche.
+    - Remonter le dissipateur avec de la pâte thermique neuve et serrer les vis dans l'ordre indiqué.
+    - Allumer le rétroéclairage du clavier et ouvrir et fermer l'écran plusieurs fois ; l'écran et le rétroéclairage doivent suivre correctement la position de l'écran.
+    - Lancer un long test de charge thermique et surveiller tout scintillement ou toute coupure du rétroéclairage.
+  disclaimer:
+    title: 'Avant de commencer : avertissement'
+    p1: Je ne suis pas réparateur, je suis étudiant en génie électrique et électronique. Le contenu de ce guide repose sur des informations que j'ai compilées sur Internet, sur ma lecture des fiches techniques, sur mes propres déductions et sur les opérations et mesures que j'ai réalisées moi-même sur mon propre appareil ; rien ne garantit qu'il donnera le même résultat sur tous les appareils.
+    p2: 'Toutes les mesures et opérations de ce guide se font entièrement sous votre propre responsabilité. Faites particulièrement attention aux points suivants :'
+    items:
+    - Avant toute soudure ou tout démontage, débranchez le chargeur, assurez-vous que l'appareil est hors tension et débranchez le connecteur de la batterie.
+    - Lors des mesures sous tension, une pointe de touche qui glisse peut court-circuiter des broches voisines et endommager le matériel ; utilisez des pointes fines et maintenez-les bien immobiles sur les pastilles.
+    - Avec de l'air chaud, protégez au ruban Kapton les petits condensateurs proches du capteur et les connecteurs comme JIR2.
+    - Prenez des précautions contre les décharges électrostatiques (ESD) lorsque vous travaillez sur la carte.
+    - Si le dissipateur a été démonté, renouvelez la pâte thermique et serrez les vis dans l'ordre indiqué.
+    - En cas de doute sur une étape, arrêtez-vous et demandez l'aide d'une personne expérimentée.
+es:
+  brand: Guía del sensor Hall Victus 16
+  description: Diagnóstico y reparación de la avería del sensor de efecto Hall y del fusible FU6 en portátiles HP Victus 16 (Toshiba TCS40DLR LA8 sustituido por Allegro A1126).
+  skip: Ir al contenido
+  contents: Contenido
+  language: Idioma
+  theme: Cambiar entre tema claro y oscuro
+  repo: Repositorio de GitHub
+  preview: Vista previa de la imagen
+  close: Cerrar
+  figure: Figura
+  anchor: Enlace a esta sección
+  zoom: Haz clic para ampliar
+  read_guide: Leer la guía
+  other_langs: Otros idiomas
+  summary:
+    title: En resumen
+    symptom_k: Síntoma
+    symptom: La retroiluminación de la pantalla y del teclado se apaga o parpadea al azar, sobre todo con carga térmica alta; el sistema se comporta como si la tapa estuviera cerrada.
+    cause_k: Causa
+    cause: El fusible FU6 de la alimentación de 3,3 V del sensor Hall se degrada con el calor y su resistencia aumenta; además, el sensor Toshiba TCS40DLR (LA8) original solo está especificado hasta 85 °C.
+    fix_k: Solución
+    fix: Sustituir el sensor por un Allegro A1126 y puentear FU6 (o montar un fusible nuevo). Hacer solo una de las dos cosas no es suficiente.
+    level_k: Nivel
+    level: 'Avanzado: soldadura SMD, lectura de esquemas y medidas con multímetro. Hay que desmontar la placa base y el disipador.'
+  diagram:
+    title: Ruta de alimentación del sensor Hall
+    mb: Placa base
+    sb: Placa del sensor
+    rail: Línea de 3V3
+    cable: Cable FFC
+    sensor: Sensor Hall
+    ec: EC
+    out: Salida (FFC)
+    light: Retroiluminación de pantalla y teclado
+    caption: FU6 está en serie con la alimentación del sensor, así que cualquier resistencia que gane reduce la tensión antes de que llegue al sensor. Es una representación simplificada a nivel de bloques; la salida del sensor puede pasar por circuitos intermedios de la placa base antes de llegar al EC.
+  variant:
+    title: ¿No encuentras FU6 en tu placa?
+    p1: Esta guía se basa en mi propia placa base, donde el fusible está marcado como FU6 y se encuentra justo al lado del conector JIR1. En otras variantes de placa (por ejemplo, las de procesador Intel) es probable que el fusible equivalente esté en la cara trasera de la placa base, marcado como FN2; esto proviene de casos en foros y no es seguro. Para localizar el fusible, sigue la línea de 3,3 V del sensor Hall hacia atrás desde el conector JIR1.
+    p2: 'Para un diagnóstico seguro del estado del fusible, deben hacerse estas dos medidas:'
+    items:
+    - Con la placa sin alimentación, el fusible debe pasar la prueba de continuidad entre sus dos extremos (el zumbador debe sonar). Si el zumbador no suena y el multímetro muestra un valor de resistencia, el fusible se ha degradado.
+    - Con la placa alimentada, no debe haber una caída de tensión apreciable entre los dos extremos del fusible; en un fusible sano esta caída es prácticamente nula y no supera unos pocos mV. En mi FU6 dañado medí 30 mV.
+    p3: 'Ten cuidado al medir con la placa alimentada: si la punta de la sonda resbala, puede cortocircuitar pines vecinos y dañar el hardware. Determina primero, con la placa sin alimentación y una prueba de continuidad, qué pin debe llevar los 3V3.'
+  checklist:
+    title: Después de la reparación
+    items:
+    - Comprobar todas las soldaduras con una prueba de continuidad.
+    - Con la placa sin alimentación, localizar por continuidad qué pin de JIR1 debe llevar 3V3; después, con la placa alimentada, medir con cuidado 3,3 V en ese pin.
+    - Volver a montar el disipador con pasta térmica nueva y apretar los tornillos en el orden indicado.
+    - Encender la retroiluminación del teclado y abrir y cerrar la tapa varias veces; la pantalla y la retroiluminación deben responder correctamente a la tapa.
+    - Hacer una prueba de estrés térmico prolongada y vigilar si hay parpadeos o cortes de la retroiluminación.
+  disclaimer:
+    title: 'Antes de empezar: aviso de responsabilidad'
+    p1: No soy técnico de reparación, soy estudiante de ingeniería eléctrica y electrónica. Lo que se explica en esta guía se basa en información que he recopilado en internet, en mi interpretación de las hojas de datos, en mis propias conclusiones y en los trabajos y medidas que he realizado personalmente en mi propio equipo; no hay garantía de que dé el mismo resultado en todos los equipos.
+    p2: 'Todas las medidas y operaciones de esta guía se realizan bajo tu propia responsabilidad. Presta especial atención a lo siguiente:'
+    items:
+    - Antes de soldar o desmontar, desconecta el cargador, asegúrate de que el equipo no tenga alimentación y desconecta el conector de la batería.
+    - En las medidas con el equipo alimentado, si la punta de la sonda resbala puede cortocircuitar pines vecinos y dañar el hardware; usa puntas finas y mantenlas firmes sobre las almohadillas.
+    - Al usar aire caliente, protege con cinta Kapton los pequeños condensadores cercanos al sensor y conectores como JIR2.
+    - Toma precauciones contra la descarga electrostática (ESD) al trabajar en la placa.
+    - Si has desmontado el disipador, renueva la pasta térmica y aprieta los tornillos en el orden indicado.
+    - Si no estás seguro de algún paso, detente y pide ayuda a alguien con experiencia.
+id:
+  brand: Panduan sensor Hall Victus 16
+  description: Diagnosis dan perbaikan kerusakan sensor efek Hall dan sekring FU6 pada laptop HP Victus 16 (Toshiba TCS40DLR LA8 diganti dengan Allegro A1126).
+  skip: Langsung ke isi
+  contents: Daftar isi
+  language: Bahasa
+  theme: Ganti tema terang/gelap
+  repo: Repositori GitHub
+  preview: Pratinjau gambar
+  close: Tutup
+  figure: Gambar
+  anchor: Tautan ke bagian ini
+  zoom: Klik untuk memperbesar
+  read_guide: Baca panduan
+  other_langs: Bahasa lain
+  summary:
+    title: Ringkasan
+    symptom_k: Gejala
+    symptom: Lampu latar layar dan keyboard mati atau berkedip secara acak, terutama saat beban panas tinggi; sistem berperilaku seolah-olah layar laptop sedang ditutup.
+    cause_k: Penyebab
+    cause: Sekring FU6 pada jalur suplai 3,3 V sensor Hall menurun kualitasnya akibat panas dan resistansinya naik; sensor Toshiba TCS40DLR (LA8) bawaan juga hanya dirancang hingga 85 °C.
+    fix_k: Solusi
+    fix: Ganti sensor dengan Allegro A1126 dan bypass FU6 (atau pasang sekring baru). Melakukan salah satunya saja tidak cukup.
+    level_k: Tingkat
+    level: 'Lanjutan: menyolder SMD, membaca skematik, dan pengukuran dengan multimeter. Motherboard dan heatsink harus dilepas.'
+  diagram:
+    title: Jalur suplai sensor Hall
+    mb: Motherboard
+    sb: Papan sensor
+    rail: Jalur 3V3
+    cable: Kabel FFC
+    sensor: Sensor Hall
+    ec: EC
+    out: Keluaran (FFC)
+    light: Lampu latar layar dan keyboard
+    caption: FU6 terpasang seri dengan suplai sensor, sehingga setiap kenaikan resistansinya menurunkan tegangan sebelum sampai ke sensor. Ini adalah gambaran sederhana di tingkat blok; keluaran sensor dapat melewati rangkaian perantara di motherboard sebelum sampai ke EC.
+  variant:
+    title: Tidak menemukan FU6 di papan Anda?
+    p1: Panduan ini dibuat berdasarkan motherboard milik saya sendiri, di mana sekringnya berlabel FU6 dan terletak tepat di sebelah soket JIR1. Pada varian papan lain (misalnya yang berprosesor Intel) sekring yang setara kemungkinan berada di sisi belakang motherboard dengan label FN2; informasi ini berasal dari kasus di forum dan belum pasti. Untuk menemukan sekring, telusuri jalur 3,3 V sensor Hall ke belakang mulai dari soket JIR1.
+    p2: 'Untuk diagnosis pasti apakah sekring masih baik, kedua pengukuran berikut harus dilakukan:'
+    items:
+    - Saat papan tidak bertegangan, sekring harus lolos uji kontinuitas di antara kedua ujungnya (buzzer harus berbunyi). Jika buzzer tidak berbunyi dan multimeter menunjukkan nilai resistansi, sekring telah rusak.
+    - Saat papan bertegangan, tidak boleh ada penurunan tegangan yang berarti di antara kedua ujung sekring; pada sekring yang baik penurunan ini praktis nol dan tidak lebih dari beberapa mV. Pada FU6 saya yang rusak, saya mengukur 30 mV.
+    p3: 'Berhati-hatilah saat mengukur dalam keadaan bertegangan: ujung probe yang tergelincir dapat menghubungsingkatkan pin di sebelahnya dan merusak perangkat keras. Tentukan terlebih dahulu dengan uji kontinuitas saat papan tidak bertegangan, pin mana yang harus membawa 3V3.'
+  checklist:
+    title: Setelah perbaikan
+    items:
+    - Periksa semua sambungan solder dengan uji kontinuitas.
+    - Saat papan tidak bertegangan, tentukan dengan uji kontinuitas pin JIR1 mana yang harus membawa 3V3; lalu ukur 3,3 V pada pin tersebut dengan hati-hati saat papan bertegangan.
+    - Pasang kembali heatsink dengan pasta termal baru dan kencangkan sekrup sesuai urutannya.
+    - Nyalakan lampu latar keyboard lalu buka dan tutup layar beberapa kali; layar dan lampu latar harus mengikuti posisi layar dengan benar.
+    - Jalankan uji stres termal dalam waktu lama dan perhatikan apakah ada kedipan atau lampu latar yang mati.
+  disclaimer:
+    title: 'Sebelum mulai: penafian'
+    p1: Saya bukan teknisi reparasi, saya mahasiswa teknik elektro dan elektronika. Isi panduan ini didasarkan pada informasi yang saya kumpulkan dari internet, interpretasi saya terhadap datasheet, kesimpulan saya sendiri, serta pekerjaan dan pengukuran yang saya lakukan sendiri pada perangkat saya; tidak ada jaminan hasilnya akan sama pada setiap perangkat.
+    p2: 'Semua pengukuran dan pekerjaan dalam panduan ini sepenuhnya menjadi tanggung jawab Anda sendiri. Perhatikan terutama hal-hal berikut:'
+    items:
+    - Sebelum menyolder atau membongkar, cabut charger, pastikan perangkat tidak bertegangan, dan lepaskan konektor baterai.
+    - Saat pengukuran bertegangan, ujung probe yang tergelincir dapat menghubungsingkatkan pin di sebelahnya dan merusak perangkat keras; gunakan probe berujung runcing dan tahan dengan stabil di atas pad.
+    - Saat menggunakan udara panas, lindungi kapasitor kecil di dekat sensor dan soket seperti JIR2 dengan selotip Kapton.
+    - Lakukan tindakan pencegahan terhadap pelepasan muatan listrik statis (ESD) saat bekerja pada papan.
+    - Jika heatsink sudah dilepas, ganti pasta termal dan kencangkan sekrup sesuai urutannya.
+    - Jika ragu pada suatu langkah, berhentilah dan minta bantuan orang yang berpengalaman.

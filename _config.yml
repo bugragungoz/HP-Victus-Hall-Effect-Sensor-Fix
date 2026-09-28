@@ -1,6 +1,11 @@
 title: HP Victus 16 Hall Effect Sensor Fix
 description: Technical documentation site
 
+# Same values GitHub Pages already uses for this repository; stated explicitly
+# so absolute links (hreflang) are identical everywhere. URLs do not change.
+url: "https://bugragungoz.github.io"
+baseurl: "/HP-Victus-Hall-Effect-Sensor-Fix"
+
 markdown: kramdown
 highlighter: rouge
 

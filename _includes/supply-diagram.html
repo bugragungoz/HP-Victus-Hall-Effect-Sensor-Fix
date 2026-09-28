@@ -1,0 +1,33 @@
+{%- assign t = site.data.i18n[page.lang] | default: site.data.i18n.en -%}
+<figure class="flow" aria-label="{{ t.diagram.title }}">
+  <p class="box-title">{{ t.diagram.title }}</p>
+  <div class="flow__line">
+    <div class="flow__group">
+      <span class="flow__label">{{ t.diagram.mb }}</span>
+      <div class="flow__nodes">
+        <span class="flow__node">{{ t.diagram.rail }}</span>
+        <span class="flow__arrow" aria-hidden="true"></span>
+        <span class="flow__node flow__node--key">FU6</span>
+        <span class="flow__arrow" aria-hidden="true"></span>
+        <span class="flow__node">JIR1</span>
+      </div>
+    </div>
+    <span class="flow__arrow flow__arrow--labeled"><span>{{ t.diagram.cable }}</span></span>
+    <div class="flow__group">
+      <span class="flow__label">{{ t.diagram.sb }}</span>
+      <div class="flow__nodes">
+        <span class="flow__node">JIR2</span>
+        <span class="flow__arrow" aria-hidden="true"></span>
+        <span class="flow__node">{{ t.diagram.sensor }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flow__line flow__line--signal">
+    <span class="flow__node">{{ t.diagram.sensor }}</span>
+    <span class="flow__arrow flow__arrow--labeled"><span>{{ t.diagram.out }}</span></span>
+    <span class="flow__node">{{ t.diagram.ec }}</span>
+    <span class="flow__arrow" aria-hidden="true"></span>
+    <span class="flow__node">{{ t.diagram.light }}</span>
+  </div>
+  <figcaption>{{ t.diagram.caption }}</figcaption>
+</figure>
