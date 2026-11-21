@@ -14,3 +14,8 @@ plugins:
 
 sass:
   sass_dir: _sass
+
+# README.md is for the GitHub repository page only; it is not part of the site.
+# The guide sources live in guides/ and keep their permalink front matter.
+exclude:
+  - README.md
