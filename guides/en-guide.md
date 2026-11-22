@@ -1,9 +1,9 @@
 ---
 layout: default
-title: HP Victus 16 Hall Effect Sensor Failure and Fix (FU6) - English Guide
+title: HP Victus 16 Hall Sensor Replacement and Fix (FU6, LA8)
 permalink: /en-guide/
 lang: en
-description: Diagnosing and repairing the HP Victus 16 Hall effect sensor (Toshiba TCS40DLR, LA8) and FU6 fuse failure, with an Allegro A1126 replacement.
+description: "HP Victus 16 screen or keyboard backlight flicker and sudden shutdowns: replace the LA8 Hall sensor (Toshiba TCS40DLR) with an Allegro A1126 and bypass the FU6 fuse."
 ---
 <div align="center">
   <h1>HP Victus 16 Hall Effect Sensor Failure and Solution</h1>
