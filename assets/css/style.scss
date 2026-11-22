@@ -113,12 +113,6 @@ a:hover { text-decoration-color: var(--link); }
 }
 .brand__dim { color: var(--muted); }
 .brand__sep { color: var(--line-strong); }
-.brand__tag {
-  font-size: .72rem; color: var(--accent);
-  padding: .05rem .4rem; border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  border-radius: 4px;
-}
-@media (max-width: 560px) { .brand__dim, .brand__sep, .brand__tag { display: none; } }
 
 .site-bar__tools { display: flex; align-items: center; gap: .4rem; flex: none; }
 .tool {
@@ -361,12 +355,6 @@ h2:hover .anchor, h3:hover .anchor, .anchor:focus-visible { opacity: 1; }
 
 /* ---------------- landing ---------------- */
 .is-landing .shell { padding-top: 4rem; }
-.eyebrow {
-  display: flex; flex-wrap: wrap; gap: .35rem .5rem; margin: 0 0 1.4rem;
-  font: 500 .74rem var(--mono); color: var(--muted);
-}
-.eyebrow span { padding: .15rem .5rem; border: 1px solid var(--line); border-radius: 4px; }
-.eyebrow span:first-child { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
 .is-landing .doc h1 { max-width: 20ch; }
 @media (min-width: 700px) { .is-landing .doc h1 { font-size: 3.1rem; } }
 .is-landing .doc h1 + p { font-size: 1.12rem; color: var(--muted); max-width: 54ch; margin-bottom: 2.2rem; }
@@ -411,9 +399,16 @@ h2:hover .anchor, h3:hover .anchor, .anchor:focus-visible { opacity: 1; }
   body { background: #fff; color: #000; }
 }
 
-.is-landing .summary { margin-top: 2.5rem; }
-:root:not([data-theme="light"]) .doc img { filter: brightness(.88); transition: filter .2s ease, border-color .2s ease; }
+:root:not([data-theme="light"]) .doc img { filter: brightness(.76); transition: filter .2s ease, border-color .2s ease; }
 :root:not([data-theme="light"]) .doc img:hover { filter: none; }
 .doc li > strong > a { color: var(--text); text-decoration-color: var(--accent); }
 .doc li > strong > a:hover { color: var(--link); }
 :lang(ko) .doc, :lang(ko) .toc { word-break: keep-all; overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .tool--gh span { display: none; }
+  .tool--gh { padding: 0; width: 2rem; }
+  .brand { font-size: .74rem; gap: .3rem; }
+  .site-bar__inner { padding: 0 .9rem; }
+  .site-bar__tools { gap: .3rem; }
+}
+@media (max-width: 380px) { .brand__dim, .brand__sep { display: none; } }
