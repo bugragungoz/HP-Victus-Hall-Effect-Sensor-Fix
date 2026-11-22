@@ -19,3 +19,4 @@ sass:
 # The guide sources live in guides/ and keep their permalink front matter.
 exclude:
   - README.md
+repo_url: "https://github.com/bugragungoz/HP-Victus-Hall-Effect-Sensor-Fix"

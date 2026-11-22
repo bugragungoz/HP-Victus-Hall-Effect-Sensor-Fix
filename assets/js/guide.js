@@ -13,15 +13,19 @@
   };
   var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
 
-  /* ---------- theme toggle ---------- */
+  /* ---------- theme toggle (dark by default, eased colour change) ---------- */
   var toggle = document.querySelector(".theme-toggle");
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
+  var animTimer = null;
   if (toggle) {
     toggle.addEventListener("click", function () {
-      var cur = root.getAttribute("data-theme");
-      if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      var next = cur === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
+      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.classList.add("theme-anim");
+      if (next === "light") root.setAttribute("data-theme", "light"); else root.removeAttribute("data-theme");
+      if (metaTheme) metaTheme.setAttribute("content", next === "light" ? "#f6f5f2" : "#0f0e0d");
       try { localStorage.setItem("theme", next); } catch (e) {}
+      clearTimeout(animTimer);
+      animTimer = setTimeout(function () { root.classList.remove("theme-anim"); }, 500);
     });
   }
 
@@ -97,9 +101,24 @@
     lb.addEventListener("click", function () { lb.close(); });
   }
 
+  /* ---------- section numbers ("1. Title" -> mono "01" + Title); ids are untouched ---------- */
+  each(doc.querySelectorAll("h2"), function (h) {
+    var first = h.firstChild;
+    if (!first || first.nodeType !== 3) return;
+    var m = /^\s*(\d+)\.\s+/.exec(first.nodeValue);
+    if (!m) return;
+    first.nodeValue = first.nodeValue.slice(m[0].length);
+    var num = document.createElement("span");
+    num.className = "h-num";
+    num.setAttribute("aria-hidden", "true");
+    num.textContent = (m[1].length < 2 ? "0" : "") + m[1];
+    h.insertBefore(num, first);
+    h.setAttribute("data-num", m[1]);
+  });
+
   /* ---------- heading anchors (kramdown ids are left untouched) ---------- */
   each(doc.querySelectorAll("h2[id], h3[id]"), function (h) {
-    if (isGuide && h.tagName === "H2" && !/^\d/.test(h.textContent.trim())) { h.classList.add("signature"); return; }
+    if (isGuide && h.tagName === "H2" && !h.hasAttribute("data-num")) { h.classList.add("signature"); return; }
     var a = document.createElement("a");
     a.className = "anchor";
     a.href = "#" + h.id;
@@ -113,15 +132,14 @@
   var toc = document.querySelector(".toc");
   var list = toc && toc.querySelector("ol");
   if (!list) return;
-  var heads = Array.prototype.filter.call(doc.querySelectorAll("h2[id]"), function (h) { return !h.classList.contains("signature"); });
+  var heads = Array.prototype.filter.call(doc.querySelectorAll("h2[id]"), function (h) { return h.hasAttribute("data-num"); });
   if (!heads.length) return;
   var links = {};
   heads.forEach(function (h) {
     var li = document.createElement("li");
     var a = document.createElement("a");
     var clone = h.cloneNode(true);
-    var an = clone.querySelector(".anchor");
-    if (an) an.parentNode.removeChild(an);
+    each(clone.querySelectorAll(".anchor, .h-num"), function (x) { x.parentNode.removeChild(x); });
     a.href = "#" + h.id;
     a.textContent = clone.textContent.trim();
     li.appendChild(a);

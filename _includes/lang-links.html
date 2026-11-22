@@ -1,0 +1,9 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] | default: site.data.i18n.en -%}
+{%- assign cur = site.data.languages | where: "code", lang | first -%}
+<ul class="doc-links">
+  <li class="is-primary"><a href="{{ cur.guide | relative_url }}" hreflang="{{ cur.code }}"><code>{{ cur.code }}</code><span>{{ t.read_guide }}</span></a></li>
+  {%- for l in site.data.languages %}{% if l.code != lang %}
+  <li><a href="{{ l.guide | relative_url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"><code>{{ l.code }}</code><span>{{ l.name }}</span></a></li>
+  {%- endif %}{% endfor %}
+</ul>

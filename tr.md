@@ -5,21 +5,12 @@ lang: tr
 description: HP Victus 16 laptoplarda hall effect sensör ve FU6 sigorta arızasının teşhis ve çözümüne dair teknik dokümantasyon.
 ---
 
+<p class="eyebrow"><span>HP Victus 16 · s0 / r0</span><span>TCS40DLR (LA8) → A1126</span><span>FU6 · 3V3</span></p>
+
 # HP Victus 16 Hall Effect Sensör Arızası ve Çözümü
 
-HP Victus 16 laptoplarda hall effect sensör arızasının teşhis ve çözümüne dair teknik dokümantasyon.
+Yük altında ekranın ve klavye aydınlatmasının titremesine ya da kapanmasına yol açan kapak sensörü arızasının kart seviyesinde teşhisi ve onarımı.
 
-- [Türkçe rehberi oku]({{ '/tr-guide/' | relative_url }})
-- [English guide]({{ '/en-guide/' | relative_url }})
-- [Deutsche Anleitung]({{ '/de-guide/' | relative_url }})
-- [Guide en français]({{ '/fr-guide/' | relative_url }})
-- [Guía en español]({{ '/es-guide/' | relative_url }})
-- [Panduan Bahasa Indonesia]({{ '/id-guide/' | relative_url }})
-{: .doc-links}
+<!-- slot:langs -->
 
-## İçerik
-- Arızanın tanımlanması
-- Arızanın tespiti
-- Çözüm
-- Kaynakça
-- Ek görseller
+<!-- slot:summary -->
