@@ -1,6 +1,6 @@
 # HP Victus 16 Hall Effect Sensor Fix
 
-Technical guide for diagnosing and repairing the Hall effect sensor and FU6 fuse failure in HP Victus 16 laptops.
+Technical guide for diagnosing and repairing the Hall effect sensor failure in HP Victus 16 laptops.
 
 **Read the guide: https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/**
 
