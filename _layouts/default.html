@@ -17,13 +17,51 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#262624" media="(prefers-color-scheme: dark)">
-  <meta property="og:type" content="article">
+  {%- comment -%} Canonical matches the URLs already used in the sitemap and hreflang: guides use their permalink, the TR landing page is /tr. {%- endcomment -%}
+  {%- if is_guide or page.url == '/' -%}{%- assign canon_path = page.url -%}{%- elsif lang == 'tr' -%}{%- assign canon_path = '/tr' -%}{%- else -%}{%- assign canon_path = page.url -%}{%- endif -%}
+  {%- assign canon = canon_path | absolute_url -%}
+  {%- assign og_image = "https://github.com/user-attachments/assets/3c141737-f8c9-4d9d-97e5-86d09733c698" -%}
+  <link rel="canonical" href="{{ canon }}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Buğra Güngöz">
+  <meta property="og:type" content="{% if is_guide %}article{% else %}website{% endif %}">
   <meta property="og:site_name" content="HP Victus 16 Hall Effect Sensor Fix">
+  <meta property="og:url" content="{{ canon }}">
   <meta property="og:title" content="{{ page.title | escape }}">
   <meta property="og:description" content="{{ desc | escape }}">
   <meta property="og:locale" content="{{ cur.locale | default: 'en_US' }}">
-  <meta property="og:image" content="https://github.com/user-attachments/assets/3c141737-f8c9-4d9d-97e5-86d09733c698">
+  {%- if is_guide %}
+  {%- for l in langs %}{%- if l.code != lang %}
+  <meta property="og:locale:alternate" content="{{ l.locale }}">
+  {%- endif %}{%- endfor %}
+  {%- endif %}
+  <meta property="og:image" content="{{ og_image }}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | escape }}">
+  <meta name="twitter:description" content="{{ desc | escape }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {%- if is_guide %}
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ desc | jsonify }},
+    "inLanguage": {{ lang | jsonify }},
+    "url": {{ canon | jsonify }},
+    "mainEntityOfPage": {{ canon | jsonify }},
+    "image": {{ og_image | jsonify }},
+    "author": { "@type": "Person", "name": "Buğra Güngöz" },
+    "isPartOf": { "@type": "WebSite", "name": "HP Victus 16 Hall Effect Sensor Fix", "url": {{ '/' | absolute_url | jsonify }} }
+  }</script>
+  {%- elsif page.url == '/' %}
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HP Victus 16 Hall Effect Sensor Fix",
+    "url": {{ '/' | absolute_url | jsonify }},
+    "inLanguage": ["en", "tr", "de", "fr", "es", "id"]
+  }</script>
+  {%- endif %}
   {%- if is_guide %}
   {%- for l in langs %}
   <link rel="alternate" hreflang="{{ l.code }}" href="{{ l.guide | absolute_url }}">
