@@ -10,36 +10,22 @@ Under sustained thermal load, the lid-detect Hall sensor circuit on affected boa
 
 The guide covers the cause (an 85 °C-rated Toshiba TCS40DLR sensor and a thermally degraded fuse, FU6, on its supply line), how to confirm it with measurements, and the hardware fix: replacing the sensor with an Allegro A1126 and addressing the FU6 supply drop.
 
-## Languages
-
-| Language | Guide |
-| --- | --- |
-| English | [en-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/en-guide/) |
-| Türkçe | [tr-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/tr-guide/) |
-| Deutsch | [de-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/de-guide/) |
-| Français | [fr-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/fr-guide/) |
-| Español | [es-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/es-guide/) |
-| Bahasa Indonesia | [id-guide](https://bugragungoz.github.io/HP-Victus-Hall-Effect-Sensor-Fix/id-guide/) |
-
 ## Warning
 
-The procedure requires SMD-level soldering skill, schematic reading and electrical measurement experience, and voids the manufacturer warranty. You perform it at your own risk; the author accepts no responsibility for hardware damage, data loss or injury. See the full notice at the top of each guide.
+This is a board-level repair. It requires removing the motherboard and the heatsink, SMD soldering (by iron or hot air) and a few live voltage measurements with a multimeter. If you have not done this kind of work before, practise on scrap boards first or have it done by someone experienced.
 
-## Repository layout
+- Disconnect the charger and the battery connector before any disassembly or soldering.
+- A slipping probe during a live measurement can short neighbouring pins and damage the board.
+- Opening the device voids the manufacturer warranty.
 
-| Path | Contents |
-| --- | --- |
-| `guides/` | Guide sources, one file per language. Each file sets its public URL with `permalink:`. |
-| `index.md`, `tr.md` | English and Turkish landing pages. |
-| `_layouts/`, `_includes/`, `_data/` | Site template, shared components and language/translation data. |
-| `assets/` | Stylesheet and scripts. |
-| `_config.yml` | Jekyll configuration. |
-| `sitemap.xml`, `google*.html` | Search engine files. |
-
-The site is built by GitHub Pages (Jekyll) from the `main` branch. Do not rename files in `guides/` without keeping their `permalink:` values, or the published URLs will change.
+Everything is done at your own risk. The author accepts no responsibility for hardware damage, data loss or injury. Each guide starts with the full notice.
 
 ## Usage
 
-The content may be quoted with attribution. Commercial use is not permitted. Questions and feedback: see the contact line at the top of each guide. Repair requests by email will not be answered.
+You may quote or share the guide as long as you credit the author and link back to it. Commercial use, including selling the content or using it to advertise paid repairs, is not permitted.
+
+Questions, corrections and measurements from other board variants are welcome by email (see the top of each guide) or as a GitHub issue. Repair requests will not be answered.
+
+If the guide helped you, a star on this repository helps others find it.
 
 Author: Buğra Güngöz

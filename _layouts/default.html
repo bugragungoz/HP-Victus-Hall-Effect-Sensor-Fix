@@ -14,9 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ desc | escape }}">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#262624" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0f0e0d">
   {%- comment -%} Canonical matches the URLs already used in the sitemap and hreflang: guides use their permalink, the TR landing page is /tr. {%- endcomment -%}
   {%- if is_guide or page.url == '/' -%}{%- assign canon_path = page.url -%}{%- elsif lang == 'tr' -%}{%- assign canon_path = '/tr' -%}{%- else -%}{%- assign canon_path = page.url -%}{%- endif -%}
   {%- assign canon = canon_path | absolute_url -%}
@@ -59,7 +58,7 @@
     "@type": "WebSite",
     "name": "HP Victus 16 Hall Effect Sensor Fix",
     "url": {{ '/' | absolute_url | jsonify }},
-    "inLanguage": ["en", "tr", "de", "fr", "es", "id"]
+    "inLanguage": {{ langs | map: "code" | jsonify }}
   }</script>
   {%- endif %}
   {%- if is_guide %}
@@ -72,10 +71,10 @@
   <link rel="alternate" hreflang="tr" href="{{ '/tr' | absolute_url }}">
   <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
   {%- endif %}
-  <script>try{var m=localStorage.getItem("theme");if(m==="light"||m==="dark")document.documentElement.setAttribute("data-theme",m)}catch(e){}</script>
+  <script>try{if(localStorage.getItem("theme")==="light"){document.documentElement.setAttribute("data-theme","light");document.querySelector('meta[name="theme-color"]').setAttribute("content","#f6f5f2")}}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body class="{% if is_guide %}is-guide{% else %}is-landing{% endif %}" data-lang="{{ lang }}" data-fig="{{ t.figure }}" data-anchor="{{ t.anchor }}" data-zoom="{{ t.zoom }}">
@@ -83,20 +82,24 @@
 
   <header class="site-bar">
     <div class="site-bar__inner">
-      <a class="brand" href="{{ cur.home | relative_url }}"><span class="brand__mark" aria-hidden="true"></span><span class="brand__text">{{ t.brand }}</span></a>
+      <a class="brand" href="{{ cur.home | relative_url }}" aria-label="{{ site.title }}"><span class="brand__dim">hp-victus-16</span><span class="brand__sep">/</span><span>hall-sensor-fix</span><span class="brand__tag">FU6 · LA8</span></a>
       <div class="site-bar__tools">
         <details class="lang-menu">
-          <summary aria-label="{{ t.language }}">{{ lang | upcase }}</summary>
+          <summary class="tool" aria-label="{{ t.language }}">{{ lang | upcase }}</summary>
           <ul>
             {%- for l in langs -%}
               {%- if is_guide -%}{%- assign href = l.guide -%}{%- elsif l.code == 'en' or l.code == 'tr' -%}{%- assign href = l.home -%}{%- else -%}{%- assign href = l.guide -%}{%- endif -%}
-              <li><a href="{{ href | relative_url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.name }}</a></li>
+              <li><a href="{{ href | relative_url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.code == lang %} aria-current="true"{% endif %}><span>{{ l.name }}</span><code>{{ l.code }}</code></a></li>
             {%- endfor -%}
           </ul>
         </details>
-        <button type="button" class="theme-toggle" aria-label="{{ t.theme }}" title="{{ t.theme }}">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <a class="tool tool--gh" href="{{ site.repo_url }}" aria-label="{{ t.repo }}" title="{{ t.repo }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+          <span>Star</span>
+        </a>
+        <button type="button" class="tool theme-toggle" aria-label="{{ t.theme }}" title="{{ t.theme }}">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
@@ -105,8 +108,10 @@
   {%- capture s_intro -%}{% include guide-intro.html %}{%- endcapture -%}
   {%- capture s_diagram -%}{% include supply-diagram.html %}{%- endcapture -%}
   {%- capture s_variant -%}{% include variant-note.html %}{%- endcapture -%}
-  {%- capture s_check -%}{% include repair-checklist.html %}{%- endcapture -%}
-  {%- assign body = content | replace: '<!-- slot:intro -->', s_intro | replace: '<!-- slot:diagram -->', s_diagram | replace: '<!-- slot:variant -->', s_variant | replace: '<!-- slot:checklist -->', s_check %}
+  {%- capture s_check -%}{% include repair-checklist.html %}{% include support.html %}{%- endcapture -%}
+  {%- capture s_summary -%}{% include summary.html %}{%- endcapture -%}
+  {%- capture s_langs -%}{% include lang-links.html %}{%- endcapture -%}
+  {%- assign body = content | replace: '<!-- slot:intro -->', s_intro | replace: '<!-- slot:diagram -->', s_diagram | replace: '<!-- slot:variant -->', s_variant | replace: '<!-- slot:checklist -->', s_check | replace: '<!-- slot:summary -->', s_summary | replace: '<!-- slot:langs -->', s_langs %}
 
   <div class="shell">
     {%- if is_guide %}
@@ -124,8 +129,8 @@
 
   <footer class="site-foot">
     <div class="site-foot__inner">
-      <span>Buğra Güngöz</span>
-      <a href="https://github.com/bugragungoz/HP-Victus-Hall-Effect-Sensor-Fix">{{ t.repo }}</a>
+      <span>© Buğra Güngöz</span>
+      <a href="{{ site.repo_url }}">github.com/bugragungoz/HP-Victus-Hall-Effect-Sensor-Fix</a>
     </div>
   </footer>
 

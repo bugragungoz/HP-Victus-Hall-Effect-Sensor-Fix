@@ -5,12 +5,4 @@
   <p>{{ t.disclaimer.p2 }}</p>
   <ul>{% for it in t.disclaimer.items %}<li>{{ it }}</li>{% endfor %}</ul>
 </details>
-<section class="summary" aria-label="{{ t.summary.title }}">
-  <p class="box-title">{{ t.summary.title }}</p>
-  <dl class="summary__list">
-    <div><dt>{{ t.summary.symptom_k }}</dt><dd>{{ t.summary.symptom }}</dd></div>
-    <div><dt>{{ t.summary.cause_k }}</dt><dd>{{ t.summary.cause }}</dd></div>
-    <div><dt>{{ t.summary.fix_k }}</dt><dd>{{ t.summary.fix }}</dd></div>
-    <div><dt>{{ t.summary.level_k }}</dt><dd>{{ t.summary.level }}</dd></div>
-  </dl>
-</section>
+{% include summary.html %}

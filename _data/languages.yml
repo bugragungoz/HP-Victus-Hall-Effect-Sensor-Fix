@@ -29,3 +29,23 @@
   locale: id_ID
   guide: /id-guide/
   home: /id-guide/
+- code: it
+  name: Italiano
+  locale: it_IT
+  guide: /it-guide/
+  home: /it-guide/
+- code: pl
+  name: Polski
+  locale: pl_PL
+  guide: /pl-guide/
+  home: /pl-guide/
+- code: ru
+  name: Русский
+  locale: ru_RU
+  guide: /ru-guide/
+  home: /ru-guide/
+- code: ko
+  name: 한국어
+  locale: ko_KR
+  guide: /ko-guide/
+  home: /ko-guide/
